@@ -1,0 +1,20 @@
+.doc-tool {
+    width: 80%;
+    margin: auto;
+}
+
+.document {
+    width: 70%;
+    margin: 2em auto;
+    border: 2px solid darkgray;
+    padding: 2em;
+}
+
+.navigation, .HUD {
+    text-align: center;
+}
+
+.counter {
+    padding: 0px 3px;
+    font-weight: bold;
+}
