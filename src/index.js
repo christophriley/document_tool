@@ -19,8 +19,16 @@ class Navigation extends React.Component {
     render() {
         return (
             <div className="navigation">
-                <Navigator text="Previous" value={-1} handleClick={this.props.handleClick}/>
-                <Navigator text="Next" value={+1} handleClick={this.props.handleClick}/>
+                <Navigator 
+                    text="Previous" 
+                    value={-1} 
+                    handleClick={this.props.handleClick}
+                />
+                <Navigator 
+                    text="Next" 
+                    value={+1} 
+                    handleClick={this.props.handleClick}
+                />
             </div>
         );
     }
@@ -77,11 +85,16 @@ class DocTool extends React.Component {
             maxDocs: this.props.data.length,
             docNumber: 1
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this); //TODO: figure out why I need to bind the "this" context
     }
 
     handleClick(increment) {
         const newDocNumber = this.state.docNumber + increment;
+
+        //boundary checking
+        if (newDocNumber < 1 || newDocNumber > this.state.maxDocs)
+            return;
+
         this.setState({docNumber:newDocNumber});
     }
 
