@@ -2,16 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Document extends React.Component {
-  render() {
-    return (
-      <div className="document">
-        {this.props.text}
-      </div>
-    );
-  }
-}
-
+// ========================================
+// Navigation
+// ========================================
 class Navigator extends React.Component {
     render() {
         return (
@@ -33,6 +26,9 @@ class Navigation extends React.Component {
     }
 }
 
+// ========================================
+// Document counter / progress
+// ========================================
 class Counter extends React.Component {
     render() {
         return (
@@ -57,6 +53,23 @@ class HUD extends React.Component {
     }
 }
 
+// ========================================
+// Document display
+// ========================================
+class Document extends React.Component {
+  render() {
+    return (
+      <div className="document">
+        {this.props.text}
+      </div>
+    );
+  }
+}
+
+
+// ========================================
+// Central app object
+// ========================================
 class DocTool extends React.Component {
     render() {
         return (
@@ -70,7 +83,8 @@ class DocTool extends React.Component {
 }
 
 // ========================================
-
+// Initialization
+// ========================================
 const data = [
     "Document number one.",
     "The second document?",
